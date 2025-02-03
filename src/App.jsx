@@ -10,6 +10,11 @@ import Profile from './pages/Profile';
 import SimpleRegistrationForm from './components/inscription';
 import { PostProvider } from './pages/contextapi';
 import Footer from './pages/footer';
+import UpdatedUserProfile from './pages/updateUserProfile';
+
+
+import ProtectedRoute from './services/ProtectedRoute';
+
 
 function App() {
   const location = useLocation(); // Récupérer la location actuelle
@@ -38,12 +43,13 @@ function App() {
           {/* Définir les routes */}
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/profile/:id" element={<Profile />} />
+            <Route path="/profile/:id" element={ <ProtectedRoute>  < Profile />     </ProtectedRoute> } />
             
-            <Route path="/home" element={<Home />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/home" element={   <ProtectedRoute>    <Home />    </ProtectedRoute>    }/>
+            <Route path="/settings" element={   <ProtectedRoute>         <Settings />     </ProtectedRoute>    }   />
             <Route path="/login" element={<Login />} />
-            <Route path="/sign-up" element={<SimpleRegistrationForm />} />
+            <Route path="/settings/profile" element={<UpdatedUserProfile />} />
+            <Route path="/sign-up" element={< SimpleRegistrationForm />} />
             {/* Route par défaut pour rediriger les chemins inconnus */}
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

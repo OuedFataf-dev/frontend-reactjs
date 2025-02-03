@@ -14,6 +14,7 @@ import {
   UserCircleIcon,
   Cog6ToothIcon,
   InboxIcon,
+  
   PowerIcon,
 } from "@heroicons/react/24/solid";
 import { Link, useNavigate } from "react-router-dom"; // Import de useNavigate

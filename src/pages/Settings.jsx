@@ -1,4 +1,6 @@
 import React from 'react';
+import UpdatedUserProfile from './updateUserProfile';
+import { Link } from 'react-router-dom'; 
 
 function Settings (){
   return (
@@ -15,9 +17,9 @@ function Settings (){
           <h2 className="text-xl font-semibold mb-2">Profil</h2>
           <ul>
             <li>
-              <a href="#" className="text-green-600 hover:text-green-800">
+            <Link to="/settings/profile" className="text-green-600 hover:text-green-800">
                 Modifier le profil
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="text-green-600 hover:text-green-800">
